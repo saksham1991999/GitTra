@@ -14,5 +14,5 @@ This branch is for 1) parsing comments and 2) writing scripts for clone, commit,
 - Use any `gittra` command now!
 
 #### Commands:
-- `clone [GITHUB URL] [LANGUAGE]` Clones a Github repository with translated comments with the following options:
+- `gittra clone [GITHUB URL] [LANGUAGE]` Clones a Github repository with translated comments with the following options:
     - `--rename -n [DIRECTORY NAME]`
