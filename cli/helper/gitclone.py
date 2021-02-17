@@ -1,7 +1,7 @@
 import sys
 import os
 
-def clone(remote, language, dirName):
+def gitclone(remote, language, dirName):
     if not dirName:
         dirName = "translated-repo"
     cloneCLI = "git clone " + remote + " " + dirName
@@ -9,7 +9,7 @@ def clone(remote, language, dirName):
     os.system("sshpass -p your_password ssh user_name@your_localhost")
     path  = os.getcwd()
     os.chdir(path) # Specifying the path where the cloned project needs to be copied
-    os.system(clone) # Cloning
+    os.system(cloneCLI) # Cloning
 
     walk_dir = os.path.abspath(os.path.join(path, dirName))
     # print('walk_dir (absolute) = ' + walk_dir)
