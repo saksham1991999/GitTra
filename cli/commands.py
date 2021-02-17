@@ -18,12 +18,12 @@ def gitfork(remote, language, addClone):
 
     # saves changes to remote
     os.system("git add . && git commit -m 'initial commit on translated branch'")
-    os.system("git push")
+    os.system("git push --set-upstream origin translated")
 
     # todo: set up Github action for future pushes
 
 # pushes commits into translated branch
-def gitpush(language):
+def gitpush():
 
     os.system("sshpass -p your_password ssh user_name@your_localhost")
     # ensures changes are being made to the translated branch
@@ -51,9 +51,6 @@ def fork(repo, lang, rename, name="fork"):
 
 @cli.command()
 @click.argument("lang", type=str)
-def push(repo, lang, rename, name="push"):
+def push(name="push"):
     """Pushes into the translated branch of the Github fork"""
-    if rename:
-        gitclone(repo, lang, rename)
-    else:
-        gitclone(repo, lang, "translated")
+    gitpush()
