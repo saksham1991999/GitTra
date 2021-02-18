@@ -1,22 +1,20 @@
 #!/usr/bin/python
-"""This module provides methods for parsing comments from Go source code."""
+"""This module provides methods for parsing comments from Javascript code."""
 
-from comment_parser.parsers import common
+from . import common
 
 
 def extract_comments(code):
-  """Extracts a list of comments from the given Go source code.
+  """Extracts a list of comments from the given Javascript source code.
 
   Comments are represented with the Comment class found in the common module.
-  Go comments come in two forms, single and multi-line comments.
+  Javascript comments come in two forms, single and multi-line comments.
     - Single-line comments begin with '//' and continue to the end of line.
     - Multi-line comments begin with '/*' and end with '*/' and can span
       multiple lines of code. If a multi-line comment does not terminate
       before EOF is reached, then an exception is raised.
-  Go comments are not allowed to start in a string or rune literal. This
-  module makes sure to watch out for those.
-
-  https://golang.org/ref/spec#Comments
+  This module takes quoted strings into account when extracting comments from
+  source code.
 
   Args:
     code: String containing code to extract comments from.
@@ -35,10 +33,10 @@ def extract_comments(code):
   for char in code:
     if state == 0:
       # Waiting for comment start character or beginning of
-      # string or rune literal.
+      # string.
       if char == '/':
         state = 1
-      elif char in ('"', "'", '`'):
+      elif char in ('"', "'"):
         string_char = char
         state = 5
     elif state == 1:
@@ -52,7 +50,7 @@ def extract_comments(code):
       else:
         state = 0
     elif state == 2:
-      # In single-line comment, read characters util EOL.
+      # In single-line comment, read characters until EOL.
       if char == '\n':
         comment = common.Comment(current_comment, line_counter)
         comments.append(comment)
