@@ -10,3 +10,5 @@ toml==0.10.2
 wrapt==1.12.1
 googletrans==3.1.0a0
 python-magic-bin
+translate
+google_trans_new
