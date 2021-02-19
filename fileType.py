@@ -1,1 +1,0 @@
-#This module is for identifying the filetype of the code and returning the type of file, based on the extensions
