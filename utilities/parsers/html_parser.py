@@ -8,7 +8,7 @@ Works with:
 
 import re
 from bisect import bisect_left
-from comment_parser.parsers import common
+from . import common
 
 
 def extract_comments(code):

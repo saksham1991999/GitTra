@@ -1,7 +1,7 @@
 #!/usr/bin/python
 """This module provides methods for parsing comments from shell scripts."""
 
-from comment_parser.parsers import common
+from . import common
 
 
 def extract_comments(code):

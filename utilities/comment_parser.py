@@ -24,14 +24,17 @@ try:
 except ImportError:
   has_magic = False
 
-from comment_parser.parsers import c_parser
-from comment_parser.parsers import common
-from comment_parser.parsers import go_parser
-from comment_parser.parsers import html_parser
-from comment_parser.parsers import js_parser
-from comment_parser.parsers import python_parser
-from comment_parser.parsers import ruby_parser
-from comment_parser.parsers import shell_parser
+import sys
+sys.path.insert(0, 'utilities/parsers/')
+
+from .parsers import c_parser
+from .parsers import common
+from .parsers import go_parser
+from .parsers import html_parser
+from .parsers import js_parser
+from .parsers import python_parser
+from .parsers import ruby_parser
+from .parsers import shell_parser
 
 MIME_MAP = {
     'application/javascript': js_parser,  # Javascript
@@ -55,11 +58,11 @@ class Error(Exception):
 
 class UnsupportedError(Error):
   """Raised when trying to extract comments from an unsupported MIME type."""
-
+  pass
 
 class ParseError(Error):
   """Raised when a parser issue is encountered."""
-
+  pass
 
 def extract_comments(filename, mime=None):
   """Extracts and returns the comments from the given source file.
@@ -104,7 +107,7 @@ def extract_comments_from_str(code, mime=None):
   try:
     parser = MIME_MAP[mime]
     return parser.extract_comments(code)
-  except common.Error as e:
+  except Exception as e:
     raise ParseError() from e
 
 

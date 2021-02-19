@@ -3,7 +3,7 @@
 
 import io
 import tokenize
-from comment_parser.parsers import common
+from . import common
 
 
 def extract_comments(code):
