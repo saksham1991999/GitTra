@@ -4,6 +4,14 @@ import os
 import shutil
 import translator
 
-#make add all files
+def commit():
+    #make add all files after entering the directory
+    os.system("cd translated-project")
 
-#make a commit 
+    os.system("git add .")
+
+    #make a commit
+    os.system('commit -m "translate project"')
+
+    #go out of the directory
+    os.system("cd ..")
