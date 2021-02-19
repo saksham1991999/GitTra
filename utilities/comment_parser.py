@@ -17,15 +17,13 @@ Dependencies:
 """
 
 import sys
+sys.path.insert(0, 'utilities/parsers/')
 
 try:
   import magic
   has_magic = True
 except ImportError:
   has_magic = False
-
-import sys
-sys.path.insert(0, 'utilities/parsers/')
 
 from .parsers import c_parser
 from .parsers import common
