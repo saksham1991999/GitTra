@@ -4,6 +4,12 @@ import os
 from utilities import comment_translator, fileType, translator
 
 
+# implement new module to get a .traignore file from the commandline
+translation_ignore = ['.git', 'node_modules']
+
+# need to import gitignore file
+gitignore = []
+
 def translate_file(filename, initial_dir, final_dir, language):
     original_file = open(os.path.join(initial_dir, filename), mode='r+', encoding="utf8")
     translated_file = open(os.path.join(final_dir, filename), "w", encoding="utf-8")
@@ -16,15 +22,13 @@ def translate_file(filename, initial_dir, final_dir, language):
     translated_file.write(translated_content)
     return translations_copy
 
-
 def parse_directory(initial_dir, final_dir, language):
     current_dir = os.path.abspath(os.getcwd())
     walk_dir = os.path.join(current_dir, initial_dir)
     os.makedirs(os.path.join(current_dir, final_dir), exist_ok=True)
-    translation_ignore = []
     try:
         f = open(os.path.join(walk_dir, ".gitignore"), "r")
-        gitignore = list(map(lambda x: x.strip("\n"), f.readlines()))
+        gitignore.append(list(map(lambda x: x.strip("\n"), f.readlines())))
     except Exception as e:
         gitignore = []
     translation_copy = {}
@@ -45,6 +49,7 @@ def translate_file_back(filename, initial_dir, final_dir, translation_copy, lang
     original_file = open(os.path.join(initial_dir, filename), mode='r+', encoding="utf8")
     translated_file = open(os.path.join(final_dir, filename), "w", encoding="utf-8")
     mime = fileType.get_parser_mime(path=filename)
+    print(filename)
     file_content = original_file.read()
     if mime == 'none':
         translated_file.write(file_content)
@@ -57,7 +62,7 @@ def parse_back(initial_dir, final_dir):
     current_dir = os.path.abspath(os.getcwd())
     walk_dir = os.path.join(current_dir, initial_dir)
     os.makedirs(os.path.join(current_dir, final_dir), exist_ok=True)
-    translation_ignore = ["translations.json"]
+    translation_ignore.append("translations.json")
 
     try:
         f = open(os.path.join(walk_dir, ".gitignore"), "r")
@@ -77,6 +82,8 @@ def parse_back(initial_dir, final_dir):
         language = translator.detect_comment(translation_copy[comment])
         break
     for root, subdirs, files in os.walk(walk_dir, topdown=True):
+        subdirs[:] = [d for d in subdirs if d not in translation_ignore]
+        subdirs[:] = [d for d in subdirs if d not in gitignore]
         files[:] = [d for d in files if d not in translation_ignore]
         files[:] = [d for d in files if d not in gitignore]
         final_root = root.replace(initial_dir, final_dir)
