@@ -2,7 +2,7 @@ import sys
 import os
 from zipfile import ZipFile
 
-from core import translator
+from ..translator import parse_directory
 
 
 def get_all_file_paths(directory):
@@ -13,8 +13,9 @@ def get_all_file_paths(directory):
             file_paths.append(filepath)
     return file_paths
 
+
 def get_username_reponame(url):
-    url = url.strip().strip("https://")
+    url = url.strip().replace("https://", "")
     url = url.replace("github.com/", "")
     username, repo_name = url.split("/")
     return username, repo_name
@@ -38,7 +39,7 @@ def translate_repo(repo_name, user_path, language):
     repo_path = os.path.join(user_path, repo_name)
     translated_repo_path = os.path.join(user_path, repo_name + "-translated-"+language)
     zip_path = os.path.join(user_path, repo_name + "-translated-" + language + ".zip")
-    translator.parse_directory(repo_path, translated_repo_path, language)
+    parse_directory(repo_path, translated_repo_path, language)
     zip_file(zip_path, translated_repo_path)
     return zip_path
 
