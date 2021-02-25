@@ -1,7 +1,9 @@
 import json
 import os
 
-from utilities import comment_translator, fileType, translator
+from .comment_translator import *
+from .fileType import *
+from .translator import *
 
 
 def translate_file(filename, initial_dir, final_dir, language):
