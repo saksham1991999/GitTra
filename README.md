@@ -5,10 +5,11 @@
 ### Prerequisites
 - Ensure that you have the Github CLI client installed. If not, follow the instructions [here](https://github.com/cli/cli) to set it up.
 - Ensure that you have pip installed.
+- Optional: Set up a virtual environment by following the instructions [here](https://docs.python.org/3/library/venv.html)
+- Install the required dependencies using `pip install -r requirements.txt`
 
 ### Installing the CLI client
-- In the root directory, cd into the gittra directory using `cd gittra`.
-- Run the following command:
+- In the root directory, run the following command:
   - **Linux**: `python3 -m pip install --editable .`
   - **Windows & Mac**: `pip install -e .`
 - Use any `gittra` command now to fork, clone and push repos in different languages!
