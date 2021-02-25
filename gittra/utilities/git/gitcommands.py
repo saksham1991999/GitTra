@@ -41,7 +41,7 @@ def gitclone(remote, language, dirName):
    
     os.system("sshpass -p your_password ssh user_name@your_localhost")
     path  = os.getcwd()
-    os.chdir(path) # Specifying the path where the cloned project needs to be copied
-    os.system(cloneCLI) # Cloning
+    os.chdir(path) # specifies the path where the cloned project needs to be copied
+    os.system(cloneCLI) # clone into directory
     
-    parse_directory("original_dir", "translated_dir", "en")
+    parse_directory(dirName, dirName, language)
