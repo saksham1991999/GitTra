@@ -90,5 +90,3 @@ def parse_back(initial_dir, final_dir):
         os.makedirs(final_root, exist_ok=True)
         for file in files:
             translate_file_back(file, root, final_root, translation_copy, language)
-
-parse_directory("gittra-demo", "gittra-demo", 'en')
