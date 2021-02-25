@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block extra_stylesheet %}
+{% endblock extra_stylesheet %}
+
+{% block content %}
+<div class="container">
+	<div class="text-center"> <img src="{% static 'images/gittralogo.png' %}" class="img-fluid" alt="Italian Trulli"> </div>
+	<div class="jumbotron jumbotron-fluid text-center">
+		<h1 class="display-4">Hello, world!</h1>
+		<p class="lead">Gittra is a translation tool that makes collaboration, between people using different language to comment but same programming language to code, easier.</p>
+		<div class="container">
+			<hr class="my-4"> </div>
+		<p>So, wanna work on that cool project that has comments in another language?, we got you covered.</p>
+		<p class="lead"> <a class="btn btn-primary btn-md" href="https://github.com/saksham1991999/MLH-Hackathon-1" role="button">Learn more About the project</a> </p>
+	</div>
+	<div class="container text-center">
+		<form method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="row justify-content-sm-center">
+				<div class="col-md-5">
+					<div class="form-group">
+						<label for="github">Github url/ Remote Repo</label>
+						{% render_field form.url class="form-control" placeholder="" %}
+					</div>
+				</div>
+				<!--  col-md-6   -->
+				<div class="col-md-1">
+					<p>OR</p>
+				</div>
+				<div class="col-md-5">
+					<p>Custom file:</p>
+					<div class="custom-file mb-3">
+						{% render_field form.file class="custom-file-input" %}
+					</div>
+				</div>
+				<!--  col-md-6   -->
+			</div>
+			<br/>
+			<div class="row justify-content-sm-center">
+				<p>THEN</p>
+			</div>
+			<div class="container row justify-content-md-center">
+				<div class="col-md-3">
+					<div class="form-group">
+						<label for="language">Language</label>
+						{% render_field form.language class="form-control" %}
+					</div>
+				</div>
+			</div>
+			</br>
+			<button type="submit" class="btn btn-primary btn-md">Submit to translate</button>
+		</form>
+	</div>
+	<div class="container">
+		<hr class="my-4"> </div>
+</div>
+{% endblock content %}
+
+{% block extra_scripts %}
+{% endblock extra_scripts %}
