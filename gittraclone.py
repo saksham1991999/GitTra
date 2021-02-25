@@ -1,10 +1,10 @@
 import sys
 import os
 import shutil
-
 from utilities import comment_translator
 from utilities import fileType
 from script import parse_directory
+from utilities import ascii
 
 print("entered " + str(len(sys.argv)) + " arguments")
 print("First argument is " + (sys.argv)[1])
@@ -14,7 +14,7 @@ remoteGitName = (sys.argv)[1]
 path = os.getcwd()
 clone = "git clone " + remoteGitName
 
-dirname = "original-dir"
+dirname = "original_dir"
 clone = clone + " " + dirname
 
 print(path)
@@ -43,14 +43,18 @@ print("!!! Remote Repo cloned as original-project")
 
 
 # source to be copied
-src = os.path.join(path, "original-dir")
+src = os.path.join(path, "original_dir")
 
 # walking directory
-walk_dir = os.path.abspath(os.path.join(path, "original-dir"))
+walk_dir = os.path.abspath(os.path.join(path, "original_dir"))
 
 print('walk_dir (absolute) = ' + walk_dir)
 
 # removing git info for the translated directory
 # shutil.rmtree(os.path.join(dst, ".git"))
 
-parse_directory("original-dir", "translated-dir", "en")
+#parse comments and commit
+parse_directory("original_dir", "translated_dir", "en")
+
+print("\n\n\n")
+ascii.getAscii()
