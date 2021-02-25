@@ -11,11 +11,11 @@ def home_view(request):
     form = RepositoryForm()
     if request.method == "POST":
         form = RepositoryForm(request.POST, request.FILES)
-        print(request.POST)
         if request.POST['url']:
             if form.is_valid():
                 new_form = form.save(commit=False)
                 url = new_form.url
+                url = url.replace(".git", "")
                 language = new_form.language
                 current_dir = os.getcwd()
                 os.chdir(current_dir)
@@ -55,6 +55,7 @@ def repo_url_view(request, github_username, repo_name):
     if "language" in request.GET:
         language = request.GET['language']
     url = "https://github.com/{}/{}".format(github_username, repo_name)
+    url = url.replace(".git", "")
     current_dir = os.getcwd()
     os.chdir(current_dir)
     repo_name, user_path = git_clone(url)
