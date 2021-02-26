@@ -9,5 +9,5 @@ import subprocess
 #taken directory: original directory
 def gittra_pull(origin, branch):
     #concatenating the command
-    p = subprocess.Popen(["git pull", origin, branch], cwd=os.path.join(os.getcwd(), "original_dir"))
+    p = subprocess.Popen(["git", "pull", origin, branch], cwd=os.path.join(os.getcwd(), "original_dir"))
     p.wait()

@@ -20,7 +20,8 @@ MIME_MAP = {
     '.xml': 'text/xml',  # XML
 }
 
-
+#function to return the mime type based on the file extension
+#arg: path of file
 def get_parser_mime(path):
     filename, file_extension = os.path.splitext(path)
     try:

@@ -1,6 +1,6 @@
 #for custom environments
-original-dir/
-translated-dir/
+original_dir/
+translated_dir/
 tutorial-env/
 
 # Byte-compiled / optimized / DLL files

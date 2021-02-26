@@ -1,3 +1,5 @@
+#ASCII graphic for the logo of the project
+
 
 def getAscii():
     print("e88~~\\    ,e,    d8      d8                     ")
