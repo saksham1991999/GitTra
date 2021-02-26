@@ -1,4 +1,24 @@
-# Gittra
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+
+<p align="center">
+  <a href="www.gittra.com">
+    <img src="https://gittra.herokuapp.com/static/images/gittralogo.png" alt="Logo" height="80">
+  </a>
+
+  <h3 align="center">GitTra</h3>
+
+  <p align="center">
+    Git add-on for translating comments on open-source project. 
+    <br />
+    Helps people work on inter-language collaboration.
+  </p>
+</p>
+
+
 
 ## Development Setup
 
