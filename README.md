@@ -135,17 +135,17 @@ All you need is a remote repo name, and you're good to go.
 
 ## Screenshots
 
-![alt text](Screenshots/gittra cli.png)
+![alt text](Screenshots/gittra_cli.png)
 
-![alt text](Screenshots/gittra clone.png)
+![alt text](Screenshots/gittra_clone.png)
 
-![alt text](Screenshots/gittra postman.png)
+![alt text](Screenshots/gittra_postman.jpg)
 
-![alt text](Screenshots/gittra.tech home.png)
+![alt text](Screenshots/gittra.tech_home.png)
 
-![alt text](Screenshots/gittra.tech translated.png)
+![alt text](Screenshots/gittra.tech_translated.png)
 
-![alt text](Screenshots/gittra.tech admin.png)
+![alt text](Screenshots/gittra.tech_admin.png)
 
 ## Authors
 <table>
