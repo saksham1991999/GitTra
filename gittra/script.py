@@ -26,6 +26,7 @@ def parse_directory(initial_dir, final_dir, language):
     current_dir = os.path.abspath(os.getcwd())
     walk_dir = os.path.join(current_dir, initial_dir)
     os.makedirs(os.path.join(current_dir, final_dir), exist_ok=True)
+    gitignore =[]
     try:
         f = open(os.path.join(walk_dir, ".gitignore"), "r")
         gitignore.append(list(map(lambda x: x.strip("\n"), f.readlines())))
@@ -63,7 +64,7 @@ def parse_back(initial_dir, final_dir):
     walk_dir = os.path.join(current_dir, initial_dir)
     os.makedirs(os.path.join(current_dir, final_dir), exist_ok=True)
     translation_ignore.append("translations.json")
-
+    gitignore =[]
     try:
         f = open(os.path.join(walk_dir, ".gitignore"), "r")
         gitignore = list(map(lambda x: x.strip("\n"), f.readlines()))
@@ -91,4 +92,4 @@ def parse_back(initial_dir, final_dir):
         for file in files:
             translate_file_back(file, root, final_root, translation_copy, language)
 
-parse_directory("gittra-demo", "gittra-demo", 'en')
+# parse_directory("gittra-demo", "gittra-demo", 'en')
