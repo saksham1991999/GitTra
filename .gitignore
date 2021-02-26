@@ -1,4 +1,6 @@
 #for custom environments
+original-dir/
+translated-dir/
 tutorial-env/
 
 # Byte-compiled / optimized / DLL files
@@ -130,3 +132,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# cache
+__pycache__
+gittra.egg-info
