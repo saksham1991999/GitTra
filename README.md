@@ -139,7 +139,7 @@ All you need is a remote repo name, and you're good to go.
 
 ![alt text](Screenshots/gittra clone.png)
 
-![alt text](Screenshots/gittra postman.png)
+![alt text](Screenshots/gittra postman.jpg)
 
 ![alt text](Screenshots/gittra.tech home.png)
 
