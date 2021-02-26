@@ -1,14 +1,13 @@
 import sys
 import os
 import subprocess
-from gittracommit import gittraCommit
 
 #for gittra pull
 #commit the current changes in the original directory
 
 
 #taken directory: original directory
-def gittraPull(origin, branch)
+def gittra_pull(origin, branch):
     #concatenating the command
     push = "git pull"+(sys.argv)[1] + (sys.argv)[2]
     p = subprocess.Popen([push], cwd=os.path.join(os.getcwd(), "original_dir"))

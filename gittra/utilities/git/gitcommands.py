@@ -6,6 +6,7 @@ import subprocess
 from gittra.script import parse_back, parse_directory
 from gittra.utilities import ascii
 
+
 # forks the repo
 def gittra_fork(remote, language):
     
@@ -60,24 +61,5 @@ def gittra_clone(remote, language):
     # translate all comments in the entire repo
     parse_directory("", "", language)
 
-    # saves changes to remote
-    os.system("git add . && git commit -m 'initial commit on translated branch'")
-    os.system("git push --set-upstream origin translated")
-
     # prints ascii message
     ascii.getAscii()
-
-
-# def gittra_commit(message):
-
-#     # ensures changes are being made to the translated branch
-#     os.system("git checkout translated")
-#     # commits changes
-#     os.system("git commit -m '" + message + "'")
-
-#     # puts same commit on main
-#     os.system("git checkout main")
-#     os.system("git commit -m '" + message + "'")
-
-
-# todo: set up gittra_checkout

@@ -4,7 +4,7 @@
 
 ### Prerequisites
 - Ensure that you have the Github CLI client installed. If not, follow the instructions [here](https://github.com/cli/cli) to set it up.
-- Ensure that you have pip installed.
+- Ensure that you have pip and python installed.
 - Optional: Set up a virtual environment by following the instructions [here](https://docs.python.org/3/library/venv.html)
 - Install the required dependencies using `pip install -r requirements.txt`
 

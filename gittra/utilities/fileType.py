@@ -2,7 +2,7 @@
 This module is for identifying the filetype of the code and returning the type of file, based on the extensions
 """
 import os
-import magic
+
 
 MIME_MAP = {
     '.html': 'text/html',  # HTML
@@ -19,11 +19,6 @@ MIME_MAP = {
     '.sh': 'text/x-shellscript',  # Unix shell
     '.xml': 'text/xml',  # XML
 }
-
-
-def get_magic_mime(path):
-    mime = magic.from_file("{}".format(path), mime=True)
-    return mime
 
 
 def get_parser_mime(path):

@@ -4,15 +4,8 @@ import subprocess
 #for gittra push
 
 #taken directory: original directory
-def gittraAdd():
+def gittra_add(files):
     #concatenating the command
-    push = "git add"+(sys.argv)[1]
+    push = "git add "+ files
     p = subprocess.Popen([push], cwd=os.path.join(os.getcwd(), "original_dir"))
     p.wait()
-    
-
-files = []
-try:
-    
-except ValueError:
-        print("Git commit err: commit message necessary")
