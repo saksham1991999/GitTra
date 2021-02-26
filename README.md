@@ -31,19 +31,25 @@
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-  * [Usage](#usage)
-* [Frontend](#frontend)
-* [Backend](#backend)
+  * [Installation](#installing-the-cli-client)
+  * [Usage](#usage-commands)
+* [Web Application](#web-application)
     * [Django](#django)
-    * [JWT Token](#jwt-token)
+    * [Installation](#django-installation)
+    * [Features](#features)
 * [Screenshots](#screenshots)
 * [Authors](#authors)
 * [Contributing](#contributing)
 * [License](#license)
 
 ## About the Project
-[GitTra](https://www.gittra.com/) is a 
+[GitTra](https://www.gittra.com/) is a translation tool for open source collaborator. 
+
+Got that one project that you want to work on and all the documentation is in chinese?
+   ... we got you covered.
+
+Use Gittra as a CLI or use our Dashboard to clone a translated version.
+All you need is a remote repo name, and you're good to go.
 
 ### Built With
 *   Python
@@ -52,7 +58,7 @@
 
 [Back to Table of Contents](#table-of-contents)
 
-## Development Setup
+## Getting Started
 
 ### Prerequisites
 - Ensure that you have the Github CLI client installed. If not, follow the instructions [here](https://github.com/cli/cli) to set it up.
@@ -73,9 +79,26 @@
 
 
 ## Web Application
-### Installation
 
+## Frontend
 
+* #### Django template language
+    Django’s template language is designed to strike a balance between power and ease. It’s designed to feel comfortable to those used to working with HTML. If you have any exposure to other text-based template languages, such as Smarty or Jinja2, you should feel right at home with Django’s templates.
+    
+
+## Backend
+
+* #### Django 
+    Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It's free and open source.
+    
+    * ###### Why Django ?
+        *  Ridiculously fast
+        *  Reassuringly secure
+        *  Exceedingly scalable
+        *  Incredibly versatile
+        *  Easy to Integrate with Python Libraries/Functions
+  
+### Django Installation
 
 * Backend
 
@@ -102,26 +125,27 @@
     
 [Back to Table of Contents](#table-of-contents)
 
-## Frontend
 
-* #### Django template language
-    Django’s template language is designed to strike a balance between power and ease. It’s designed to feel comfortable to those used to working with HTML. If you have any exposure to other text-based template languages, such as Smarty or Jinja2, you should feel right at home with Django’s templates.
-    
+## Features
+  * Translate the repository using the GitHub repo URL, uploading a zip file.
+  * Translate the repository by replacing GitHub.com with GitTra.com
+  * Send a Post request to /api and will receive the Translated Zip URL in response.
 
-## Backend
+[Back to Table of Contents](#table-of-contents)
 
-* #### Django 
-    Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It's free and open source.
-    
-    * ###### Why Django ?
-        *  Ridiculously fast
-        *  Reassuringly secure
-        *  Exceedingly scalable
-        *  Incredibly versatile
-        *  Easy to Integrate with Python Libraries/Functions
-  
+## Screenshots
 
+![alt text](Screenshots/gittra cli.png)
 
+![alt text](Screenshots/gittra clone.png)
+
+![alt text](Screenshots/gittra postman.png)
+
+![alt text](Screenshots/gittra.tech home.png)
+
+![alt text](Screenshots/gittra.tech translated.png)
+
+![alt text](Screenshots/gittra.tech admin.png)
 
 ## Authors
 <table>
@@ -157,3 +181,5 @@ Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+[Back to Table of Contents](#table-of-contents)
