@@ -5,9 +5,9 @@ name: Python application
 
 on:
   push:
-    branches: [ main, actions-flake8 ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, actions-flake8 ]
+    branches: [ main ]
 
 jobs:
   build:
