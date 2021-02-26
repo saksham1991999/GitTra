@@ -1,8 +1,8 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![Contributors][contributors-shield]][https://github.com/saksham1991999/GitTra/graphs/contributors]
+[![Forks][forks-shield]][https://github.com/saksham1991999/GitTra/network/members]
+[![Stargazers][stars-shield]][https://github.com/saksham1991999/GitTra/stargazers]
+[![Issues][issues-shield]][https://github.com/saksham1991999/GitTra/issues]
+[![MIT License][license-shield]][https://github.com/saksham1991999/GitTra/blob/main/LICENSE]
 
 <p align="center">
   <a href="www.gittra.com">
